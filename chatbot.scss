@@ -143,6 +143,13 @@
         color: rgb(6, 19, 43);
         background: rgb(240, 242, 247);
         font-weight: 500;
+
+        &.write{
+            font-style: italic;
+            font-weight: 200;
+            opacity: .8;
+            font-size: 14px;
+        }
       }
 
       .send {
@@ -174,9 +181,11 @@
           color: rgb(6, 19, 43);
           font-weight: 500;
           font-size: 18px;
-          animation: wrong 1s .1s;
           &::placeholder {
             color: #93989c;
+          }
+          &.wrong{
+            animation: wrong infinite 1s;
           }
           @keyframes wrong {
             0% {

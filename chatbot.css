@@ -137,6 +137,12 @@
   background: rgb(240, 242, 247);
   font-weight: 500;
 }
+.chatbot .chat-body .receive.write {
+  font-style: italic;
+  font-weight: 200;
+  opacity: 0.8;
+  font-size: 14px;
+}
 .chatbot .chat-body .send {
   align-self: flex-end;
   max-width: 268px;
@@ -168,8 +174,6 @@
   color: rgb(6, 19, 43);
   font-weight: 500;
   font-size: 18px;
-  -webkit-animation: wrong 1s 0.1s;
-          animation: wrong 1s 0.1s;
 }
 .chatbot .chat-footer .chat-input input::-moz-placeholder {
   color: #93989c;
@@ -179,6 +183,10 @@
 }
 .chatbot .chat-footer .chat-input input::placeholder {
   color: #93989c;
+}
+.chatbot .chat-footer .chat-input input.wrong {
+  -webkit-animation: wrong infinite 1s;
+          animation: wrong infinite 1s;
 }
 @-webkit-keyframes wrong {
   0% {
