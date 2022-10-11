@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+
+$black: #0b1121;
+$white: #ffffff;
+$gray: #94a3b8;
+$blue: #37bcf8;
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+  font-weight: 300;
+  color: $white;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background-color: $black;
+}
+
+body {
+  position: relative;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 500px;
+    height: 500px;
+    -webkit-filter: blur(200px);
+    filter: blur(200px);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(to right, #37bcf8, #0b1121, #37bcf8);
+    z-index: 1;
+  }
+
+  .container {
+    width: 800px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 14rem 1rem;
+
+    @media screen and (max-width: 768px) {
+        padding: 8rem 1rem;
+    }
+
+    &-title {
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 700;
+      line-height: 45px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    &-subtitle {
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      font-weight: 300;
+      color: $white;
+      text-align: center;
+      z-index: 2;
+      span {
+        color: $blue;
+      }
+    }
+
+    &-description {
+      color: $gray;
+      font-family: "Inter", sans-serif;
+      text-align: center;
+      font-size: clamp(1rem, 1.25vw, 1.25rem);
+      z-index: 2;
+      span,
+      a {
+        font-family: "Inter", sans-serif;
+        display: inline-block;
+        color: $blue;
+        font-weight: 500;
+      }
+    }
+
+    &-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      z-index: 2;
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &__socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      &__btn {
+        a {
+          background: #334154;
+          border-radius: 2rem;
+          padding: 0.75rem 1rem;
+          border: 2px solid transparent;
+          font-weight: 400;
+          font-size: 0.9rem;
+          &:hover {
+            background: darken($color: #334154, $amount: 1);
+          }
+          &:active {
+            box-shadow: 0 0 0 2px $blue;
+          }
+        }
+      }
+    }
+  }
+
+  .bg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr;
+    transform: rotate(45deg);
+    z-index: 1;
+    .bg-line {
+      border-right: 1px rgba($color: $blue, $alpha: 0.3);
+      width: 100%;
+      height: 100%;
+      &:nth-child(even) {
+        border-right-style: dashed;
+      }
+      &:nth-child(odd) {
+        border-right-style: solid;
+
+        @media screen and (max-width: 728px) {
+          display: none;
+        }
+      }
+    }
+    @media screen and (max-width: 728px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
