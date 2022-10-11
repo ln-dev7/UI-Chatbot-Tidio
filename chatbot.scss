@@ -27,6 +27,11 @@
       opacity: 1;
       transform: translateX(0);
     }
+    @media screen and (max-width: 440px) {
+        bottom: 70px;
+    right: 0;
+    width: 350px;
+    }
     svg {
       width: 26px;
       height: 26px;

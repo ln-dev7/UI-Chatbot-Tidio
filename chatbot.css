@@ -27,6 +27,13 @@
   opacity: 1;
   transform: translateX(0);
 }
+@media screen and (max-width: 440px) {
+  .chatbot .chat {
+    bottom: 70px;
+    right: 0;
+    width: 350px;
+  }
+}
 .chatbot .chat svg {
   width: 26px;
   height: 26px;
